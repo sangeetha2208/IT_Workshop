@@ -1,0 +1,392 @@
+Week 2:
+            Grep command in Unix:
+
+
+rgukt-basar@123:~$ cat> grepfilter.txt
+welcome to ubuntu
+hii this is unix commands
+rgukt rajiv gandhi university of knowledge technologies
+
+rgukt-basar@123:~$ grep 's/rgukt/UNIX/' grepfilter.txt
+
+-n: Display the matched lines and their line numbers.
+rgukt-basar@123:~$ grep -n "unix" grepfilter.txt
+2:hii this is unix commands
+
+rgukt-basar@123:~$ grep 's/rgukt/RGUKT/' grepfilter.txt
+
+//-o :Print only the matched parts of a matching line, with each such part on a
+separate output line.
+rgukt-basar@123:~$ grep -o "unix" grepfilter.txt
+unix
+
+//-e : Specifies expression with this option. Can use multiple times.
+rgukt-basar@123:~$ grep -e "unix" grepfilter.txt
+hii this is unix commands
+
+//-c: This prints only a count of the lines that match a pattern
+rgukt-basar@123:~$ grep -c "unix" grepfilter.txt
+1
+rgukt-basar@123:~$ grep -c "o" grepfilter.txt
+3
+
+//-o :Print only the matched parts of a matching line, with each such part on a
+separate output line.
+rgukt-basar@123:~$ grep -o "o" grepfilter.txt
+o
+o
+o
+o
+o
+o
+o
+rgukt-basar@123:~$ grep -v "this" grepfilter.txt
+welcome to ubuntu
+rgukt rajiv gandhi university of knowledge technologies
+
+//-v: This prints out all the lines that do not matches the pattern
+rgukt-basar@123:~$ grep -v "is" grepfilter.txt
+welcome to ubuntu
+rgukt rajiv gandhi university of knowledge technologies
+
+//-l: Displays list of a filenames only.
+rgukt-basar@123:~$ grep -l "this" grepfilter.txt
+grepfilter.txt
+
+Sed Command in Unix:
+
+SED is a powerful text stream editor. Can do insertion, deletion,
+search and replace(substitution).
+SED command in unix supports regular expression which allows it
+perform complex pattern matching.
+
+rgukt-basar@123:~$ sed 's/unix/linux/' geekfile.txt
+linux
+ubuntu
+Rgukt basar
+rgukt-basar@123:~$ sed 's/unix/linux/2' geekfile.txt
+unix
+ubuntu
+Rgukt basar
+rgukt-basar@123:~$ sed '2d' geekfile.txt
+unix
+Rgukt basar
+rgukt-basar@123:~$ sed '2 s/hello/HELLO/2g' file1.txt
+sed: can't read file1.txt: No such file or directory
+rgukt-basar@123:~$ sed '2 s/hello/HELLO/2g' geekfile.txt
+unix
+ubuntu
+Rgukt basar
+rgukt-basar@123:~$ sed '1,2d' geekfile.txt
+Rgukt basar
+rgukt-basar@123:~$ 
+
+rgukt-basar@123:~$ sed s'/unix/Linux/' grepfilter.text
+sed: can't read grepfilter.text: No such file or directory
+rgukt-basar@123:~$ sed s'/unix/Linux/' grepfilter.txt
+welcome to ubuntu
+hii this is Linux commands
+rgukt rajiv gandhi university of knowledge technologies
+rgukt-basar@123:~$ sed s'/unix/UNIX/' grepfilter.txt
+welcome to ubuntu
+hii this is UNIX commands
+rgukt rajiv gandhi university of knowledge technologies
+rgukt-basar@123:~$ sed 's/o/**/g' grepfilter.txt
+welc**me t** ubuntu
+hii this is unix c**mmands
+rgukt rajiv gandhi university **f kn**wledge techn**l**gies
+rgukt-basar@123:~$ sed 's/o/0/g' grepfilter.txt
+welc0me t0 ubuntu
+hii this is unix c0mmands
+rgukt rajiv gandhi university 0f kn0wledge techn0l0gies
+rgukt-basar@123:~$ shutdown -r now 
+(shutdown's the laptop now and opens automatically)
+rgukt-basar@123:~$ shutdown -r 15:04
+
+
+Sort Command:
+
+In Unix-based operating systems, the sort command is used to sort
+the lines of a text file or input stream. It's a versatile command with
+various options to customize the sorting behavior
+
+rgukt-basar@123:~$ sort -n numberfile.txt
+1
+3
+4
+24
+26
+
+//-M: Sorts by month names.
+rgukt-basar@123:~$ cat> monthfile.txt
+septemper
+octobeer
+feburary
+march
+April
+June
+August
+December
+
+rgukt-basar@123:~$ sort -M monthfile.txt
+feburary
+march
+April
+June
+August
+septemper
+octobeer
+December
+
+rgukt-basar@123:~$ cat> numberfile.txt
+24
+1
+4
+3
+26
+
+rgukt-basar@123:~$ cat>geekfile.txt
+unix
+ubuntu
+Rgukt basar
+rgukt-basar@123:~$ sed 's/unix/linux/' geekfile.txt
+linux
+ubuntu
+Rgukt basar
+rgukt-basar@123:~$ sed 's/unix/linux/2' geekfile.txt
+unix
+ubuntu
+Rgukt basar
+rgukt-basar@123:~$ sed '2d' geekfile.txt
+unix
+Rgukt basar
+rgukt-basar@123:~$ sed '2 s/hello/HELLO/2g' file1.txt
+sed: can't read file1.txt: No such file or directory
+rgukt-basar@123:~$ sed '2 s/hello/HELLO/2g' geekfile.txt
+unix
+ubuntu
+Rgukt basar
+rgukt-basar@123:~$ sed '1,2d' geekfile.txt
+Rgukt basar
+rgukt-basar@123:~$ 
+
+rgukt-basar@123:~$ sed s'/unix/Linux/' grepfilter.text
+sed: can't read grepfilter.text: No such file or directory
+rgukt-basar@123:~$ sed s'/unix/Linux/' grepfilter.txt
+welcome to ubuntu
+hii this is Linux commands
+rgukt rajiv gandhi university of knowledge technologies
+rgukt-basar@123:~$ sed s'/unix/UNIX/' grepfilter.txt
+welcome to ubuntu
+hii this is UNIX commands
+rgukt rajiv gandhi university of knowledge technologies
+rgukt-basar@123:~$ sed 's/o/**/g' grepfilter.txt
+welc**me t** ubuntu
+hii this is unix c**mmands
+rgukt rajiv gandhi university **f kn**wledge techn**l**gies
+rgukt-basar@123:~$ sed 's/o/0/g' grepfilter.txt
+welc0me t0 ubuntu
+hii this is unix c0mmands
+rgukt rajiv gandhi university 0f kn0wledge techn0l0gies
+           
+           shutdown command:
+           
+The shutdown command in Linux is used to shutdown the system in
+a safe way. You can shutdown the machine immediately, or schedule
+a shutdown using 24 hour format.It brings the system down in a
+secure way. When the shutdown is initiated, all logged-in users and
+processes are notified that the system is going down, and no further
+logins are allowed.
+
+rgukt-basar@123:~$ shutdown -r now 
+(shutdown's the laptop now and opens automatically)
+rgukt-basar@123:~$ shutdown -r 15:04
+
+                
+                AWK command in Unix:
+                
+awk is a powerful text processing tool available in Unix and Unix-
+like operating systems. It is particularly useful for processing
+structured text files, such as CSV files or log files. awk operates on a
+line-by-line basis, processing each line of input according to the
+specified commands. 
+
+rgukt-basar@123:~$ cat> awtfile.txt
+vinky window id 4567
+Arun storage id 7665    
+Mark unix id 7532
+john linux id 6543
+rgukt-basar@123:~$ awk '{print$1 $3}' awkfile.txt
+awk: cannot open awkfile.txt (No such file or directory)
+rgukt-basar@123:~$ awk '{print$1 $3}' awtfile.txt
+vinkyid
+Arunid
+Markid
+johnid
+rgukt-basar@123:~$ free m
+
+Usage:
+ free [options]
+
+Options:
+ -b, --bytes         show output in bytes
+     --kilo          show output in kilobytes
+     --mega          show output in megabytes
+     --giga          show output in gigabytes
+     --tera          show output in terabytes
+     --peta          show output in petabytes
+ -k, --kibi          show output in kibibytes
+ -m, --mebi          show output in mebibytes
+ -g, --gibi          show output in gibibytes
+     --tebi          show output in tebibytes
+     --pebi          show output in pebibytes
+ -h, --human         show human-readable output
+     --si            use powers of 1000 not 1024
+ -l, --lohi          show detailed low and high memory statistics
+ -t, --total         show total for RAM + swap
+ -s N, --seconds N   repeat printing every N seconds
+ -c N, --count N     repeat printing N times, then exit
+ -w, --wide          wide output
+
+     --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see free(1).
+rgukt-basar@123:~$ free m |awt '/mem/'
+
+Usage:
+ free [options]
+
+Options:
+ -b, --bytes         show output in bytes
+     --kilo          show output in kilobytes
+     --mega          show output in megabytes
+     --giga          show output in gigabytes
+     --tera          show output in terabytes
+     --peta          show output in petabytes
+ -k, --kibi          show output in kibibytes
+ -m, --mebi          show output in mebibytes
+ -g, --gibi          show output in gibibytes
+     --tebi          show output in tebibytes
+     --pebi          show output in pebibytes
+ -h, --human         show human-readable output
+     --si            use powers of 1000 not 1024
+ -l, --lohi          show detailed low and high memory statistics
+ -t, --total         show total for RAM + swap
+ -s N, --seconds N   repeat printing every N seconds
+ -c N, --count N     repeat printing N times, then exit
+ -w, --wide          wide output
+
+     --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see free(1).
+Command 'awt' not found, but there are 13 similar ones.
+rgukt-basar@123:~$ awt '/Mem/{print}/' free -m
+Command 'awt' not found, but there are 13 similar ones.
+rgukt-basar@123:~$ awk '/Mem/{print}/' free -m
+awk: line 1: runaway regular expression / ...
+rgukt-basar@123:~$ free m |awk '/mem/'
+
+Usage:
+ free [options]
+
+Options:
+ -b, --bytes         show output in bytes
+     --kilo          show output in kilobytes
+     --mega          show output in megabytes
+     --giga          show output in gigabytes
+     --tera          show output in terabytes
+     --peta          show output in petabytes
+ -k, --kibi          show output in kibibytes
+ -m, --mebi          show output in mebibytes
+ -g, --gibi          show output in gibibytes
+     --tebi          show output in tebibytes
+     --pebi          show output in pebibytes
+ -h, --human         show human-readable output
+     --si            use powers of 1000 not 1024
+ -l, --lohi          show detailed low and high memory statistics
+ -t, --total         show total for RAM + swap
+ -s N, --seconds N   repeat printing every N seconds
+ -c N, --count N     repeat printing N times, then exit
+ -w, --wide          wide output
+
+     --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see free(1).
+rgukt-basar@123:~$ 
+
+rgukt-basar@123:~$ ls -lrt
+rgukt-basar@123:~$ chmod a=w geekfile.txt
+rgukt-basar@123:~$ chmod u+x geekfile.txt
+rgukt-basar@123:~$ ls -lrt
+rgukt-basar@123:~$ chmod u-x geekfile.txt
+rgukt-basar@123:~$ ls -lrt
+
+shutdown command:
+$ shutdown -H
+$shutdown -P
+$ shutdown -r now
+$ shutdown -r +5
+$ sudo shutdown 15:00
+$ sudo shutdown +10
+$ sudo shutdown -c
+
+FTP Connection
+https://dlptest.com/ftp-test/-SEARCH IN GOOGLE
+FTP Test
+
+Our Public FTP test site info is below and can be used to upload test DLP files. The files will be stored for 10 minutes before being deleted.
+
+FTP URL: ftp.dlptest.com or ftp://ftp.dlptest.com/
+FTP User: dlpuser
+Password: rNrKYTX9g7z3RgJRmxWuGHbeu
+
+FileZilla Profile: https://dlptest.com/DLP_Test_FTP_FileZilla.xml
+
+rgukt-basar@123:~$ ftp ftp.dlptest.com
+Connected to ftp.dlptest.com.
+220 Welcome to the DLP Test FTP Server
+Name (ftp.dlptest.com:user): dlpuser
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+-rw-r--r--    1 1001     1001            0 Mar 26 10:42 actorstoday.txt
+-rw-r--r--    1 1001     1001            0 Mar 26 10:42 actorstomorrow.txt
+-rw-r--r--    1 1001     1001      1222112 Mar 26 10:42 test.csv
+226 Directory send OK.
+ftp> get actorstomorrow.txt
+local: actorstomorrow.txt remote: actorstomorrow.txt
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for actorstomorrow.txt (0 bytes).
+226 Transfer complete.
+ftp> get actorstoday.txt
+local: actorstoday.txt remote: actorstoday.txt
+200 PORT command successful. Consider using PASV.
+550 Failed to open file.
+ftp> exit
+221 Goodbye.
+
+FTP Commands
+1. cd Changes the working directory on the remote host
+2. close Closes the FTP connection
+3. quit Quits FTP
+4. pwd displays the current working Directory on the rem
+remote host
+5.
+6.
+dis or ls Provides a Directory Listing of the current working
+directory
+help
+Displays a list of all client FTP commands
+7. remotehelp
+Displays a list of all server FTP commands
+8. type Allows the user to specify the file type
+9. struct specifies the files structure
+
