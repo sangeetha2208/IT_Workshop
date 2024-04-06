@@ -1,0 +1,82 @@
+                    
+Week 1
+                             Basic Unix commands
+                             
+Unix users commands:These commands allow to get basic information about Unix users in ours environment.
+
+//shows the user
+rgukt-basar@123:~$ whoami
+rgukt-basar
+
+//System id
+rgukt-basar@123:~$ id
+uid=1000(rgukt-basar) gid=1000(rgukt-basar) groups=1000(rgukt-basar),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),122(lpadmin),134(lxd),135(sambashare)
+rgukt-basar@12
+
+//groups – show which groups user belongs to
+rgukt-basar@123:~$ groups
+rgukt-basar adm cdrom sudo dip plugdev lpadmin lxd sambashare
+
+//to know the directory which u r in
+rgukt-basar@123:~$ pwd
+/home/rgukt-basar
+
+//To find out who logged into our system
+rgukt-basar@123:~$ who
+rgukt-basar tty2         2024-03-19 14:53 (tty2)
+
+//last – show history of logins into the system
+rgukt-basar@123:~$last
+rgukt-ba tty2         tty2             Sat Apr  6 14:58   still logged in
+reboot   system boot  6.5.0-25-generic Sat Apr  6 14:58   still running
+rgukt-ba tty2         tty2             Wed Apr  3 14:30 - down   (00:10)
+reboot   system boot  6.5.0-25-generic Wed Apr  3 14:30 - 14:41  (00:10)
+rgukt-ba tty2         tty2             Sat Mar 30 20:47 - down   (00:01)
+reboot   system boot  6.5.0-25-generic Sat Mar 30 20:46 - 20:48  (00:01)
+
+              Unix file operations
+              
+Navigating filesystem and managing files and access permissions:
+cp – copy files (work in progress)
+rm – remove files and directories (work in progress)
+mv – rename or move files and directories to another location
+echo – “hello world”
+chown – change file/directory ownership
+            
+            Unix directory management commands
+Navigating filesystems and managing directories:
+
+
+//to create a directories(folder)
+rgukt-basar@123:~$ mkdir sun
+
+//cd – change directory
+rgukt-basar@123:~$ cd ~/Downloads
+rgukt-basar@123:~/Downloads$ cd ~/
+
+//ls -shows what are there in laptop
+
+//to remove directory
+rgukt-basar@123:~$ rmdir sun
+
+             Control Commands:
+             
+      ctrl+c:this command terminates the currently running oreground process.
+ ctrl+D:this command terminates the currently running login or terminal session
+ ctrl+Z:This command suspends the cunnently ruuning foreground process to the background.
+        
+//to create file
+rgukt-basar@123:~$ cat> sunflower
+hello sunflower
+ubuntu
+unix commands                         
+rgukt-basar@123:~$ cat sunflower
+hello sunflower
+ubuntu
+unix commands
+rgukt-basar@123:~$ 
+
+rgukt-basar@123:~$ date +%d/%m/%y
+06/04/24
+
+ 
